@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/richardlt/hackaton/cmd"
+	"github.com/richardlt/hackathon/cmd"
 )
 
 func main() {

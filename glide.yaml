@@ -1,4 +1,4 @@
-package: github.com/richardlt/hackaton
+package: github.com/richardlt/hackathon
 import:
 - package: github.com/labstack/echo
 - package: github.com/spf13/cobra
