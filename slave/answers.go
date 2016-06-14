@@ -14,12 +14,12 @@ func init() {
 }
 
 // Answer answers the question
-func Answer(question types.Question) (string, error) {
+func Answer(question types.Question) (types.Answer, error) {
 
 	val, ok := answers[question.Title]
 	if !ok {
-		return "", fmt.Errorf("Can't find a answer for the question : %v", question)
+		return types.Answer{}, fmt.Errorf("Can't find a answer for the question : %v", question)
 	}
 
-	return val, nil
+	return types.Answer{Value: val}, nil
 }

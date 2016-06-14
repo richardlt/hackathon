@@ -2,5 +2,6 @@ package types
 
 // Client struct
 type Client struct {
-	Url string `json:"url"`
+	URL   string `json:"url"`
+	Score int
 }
