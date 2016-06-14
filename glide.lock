@@ -1,8 +1,10 @@
-hash: 9255a0353a82018eadd287fb07cf978fcfbb09c225c59ccb911351962345d0f7
-updated: 2016-06-14T19:45:36.773893246+02:00
+hash: d1dbf987cec53cc14bb25bd8a59b13bef40f0391ac4e4557de51e70d87376f06
+updated: 2016-06-14T20:02:36.75390166+02:00
 imports:
 - name: github.com/BurntSushi/toml
   version: f0aeabca5a127c4078abb8c8d64298b147264b55
+- name: github.com/dgrijalva/jwt-go
+  version: c04502f106d7c5b3fae17c5da49a1bbdd3006b3c
 - name: github.com/fsnotify/fsnotify
   version: 30411dbcefb7a1da7e84f75530ad3abe4011b4f8
 - name: github.com/hashicorp/hcl
@@ -20,8 +22,23 @@ imports:
   version: 76626ae9c91c4f2a10f34cad8ce83ea42c93bb75
 - name: github.com/labstack/echo
   version: 6e183fd3d8063a14da04fa4439c52fb6b84d1cdb
+  subpackages:
+  - engine/standard
+  - middleware
+  - engine
+  - log
+- name: github.com/labstack/gommon
+  version: 722aa12d41c236ce78ff48eac1cafe0107ecdc9d
+  subpackages:
+  - log
+  - bytes
+  - color
 - name: github.com/magiconair/properties
   version: c265cfa48dda6474e208715ca93e987829f572f8
+- name: github.com/mattn/go-colorable
+  version: 9056b7a9f2d1f2d96498d6d146acd1f9d5ed3d59
+- name: github.com/mattn/go-isatty
+  version: 56b76bdf51f7708750eac80fa38b952bb9f32639
 - name: github.com/mitchellh/mapstructure
   version: d2dd0262208475919e1a362f675cfc0e7c10e905
 - name: github.com/spf13/cast
@@ -36,6 +53,12 @@ imports:
   version: 367864438f1b1a3c7db4da06a2f55b144e6784e0
 - name: github.com/spf13/viper
   version: c1ccc378a054ea8d4e38d8c67f6938d4760b53dd
+- name: github.com/valyala/fasttemplate
+  version: 3b874956e03f1636d171bda64b130f9135f42cff
+- name: golang.org/x/net
+  version: 3f122ce3dbbe488b7e6a8bdb26f41edec852a40b
+  subpackages:
+  - context
 - name: golang.org/x/sys
   version: 5a8c7f28c1853e998847117cf1f3fe96ce88a59f
   subpackages:
