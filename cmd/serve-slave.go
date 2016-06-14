@@ -21,6 +21,11 @@ import (
 	"github.com/spf13/cobra"
 )
 
+var (
+	port      string
+	masterURL string
+)
+
 // serveCmd represents the serve command
 var slaveServeCmd = &cobra.Command{
 	Use:     "serve",
@@ -29,10 +34,12 @@ var slaveServeCmd = &cobra.Command{
 	Long:    `Run the server slave`,
 	Run: func(cmd *cobra.Command, args []string) {
 		fmt.Println("Slave started")
-		slave.Serve()
+		slave.Serve(masterURL, port)
 	},
 }
 
 func init() {
+	slaveServeCmd.PersistentFlags().StringVarP(&port, "port", "p", "8081", "Port of the slave")
+	slaveServeCmd.PersistentFlags().StringVarP(&masterURL, "master", "m", "http://localhost:8080", "Url of the slave")
 	slaveCmd.AddCommand(slaveServeCmd)
 }
