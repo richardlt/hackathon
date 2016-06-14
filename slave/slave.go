@@ -21,8 +21,12 @@ func Serve() {
 	e.Use(middleware.Logger())
 	e.Use(middleware.Recover())
 
-	e.Get("/answer", func(c echo.Context) error {
-		return c.JSON(http.StatusOK, nil)
+	e.Post("/answer", func(c echo.Context) error {
+		var question types.Question
+		c.Bind(&question)
+		// TODO check if answer exist
+		answer := types.Answer{Value: ":/"}
+		return c.JSON(http.StatusOK, answer)
 	})
 
 	u := types.Register{Url: master}
