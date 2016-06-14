@@ -15,6 +15,8 @@
 package cmd
 
 import (
+	"fmt"
+
 	"github.com/richardlt/hackathon/master"
 	"github.com/spf13/cobra"
 )
@@ -22,10 +24,11 @@ import (
 // serveCmd represents the serve command
 var serveCmd = &cobra.Command{
 	Use:     "serve",
-	Aliases: []string{"server"},
+	Aliases: []string{"server", "start"},
 	Short:   "Run the server master",
 	Long:    `Run the server master`,
 	Run: func(cmd *cobra.Command, args []string) {
+		fmt.Println("Master started")
 		master.Serve()
 	},
 }
