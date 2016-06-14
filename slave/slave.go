@@ -25,8 +25,11 @@ func Serve(master string, slavePort string) {
 	e.Post("/answer", func(c echo.Context) error {
 		var question types.Question
 		c.Bind(&question)
-		// TODO check if answer exist
-		answer := types.Answer{Value: ":/"}
+
+		answer, err := Answer(question)
+		if err != nil {
+			c.JSON(http.StatusInternalServerError, types.Answer{Value: ":/"})
+		}
 		return c.JSON(http.StatusOK, answer)
 	})
 
