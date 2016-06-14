@@ -28,7 +28,7 @@ func (qs Questions) GetRandomQuestion() (Question, error) {
 
 }
 
-func (qs *Questions) Load(path string) error {
+func (qs *Questions) LoadFromFile(path string) error {
 
 	configFile, err := os.Open(path)
 	if err != nil {
@@ -36,8 +36,8 @@ func (qs *Questions) Load(path string) error {
 	}
 
 	jsonParser := json.NewDecoder(configFile)
-	if err = jsonParser.Decode(&qs); err != nil {
-		return fmt.Errorf("Error parsing questions file", err.Error())
+	if err = jsonParser.Decode(qs); err != nil {
+		return fmt.Errorf("Error parsing questions file: %v", err.Error())
 	}
 	return nil
 }
