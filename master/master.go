@@ -24,6 +24,7 @@ func Serve() {
 			return c.JSON(http.StatusBadRequest, nil)
 		}
 		client := types.Client{Url: register.Url}
+		// TODO check if slave already exist, prefer map
 		clients = append(clients, client)
 		return c.JSON(http.StatusOK, nil)
 	})
