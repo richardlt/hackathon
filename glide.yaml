@@ -1,3 +1,6 @@
 package: github.com/richardlt/hackaton
 import:
 - package: github.com/labstack/echo
+- package: github.com/spf13/cobra
+  subpackages:
+  - cobra
