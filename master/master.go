@@ -23,6 +23,8 @@ func Serve() {
 		if register.Url == "" {
 			return c.JSON(http.StatusBadRequest, nil)
 		}
+		client := types.Client{Url: register.Url}
+		clients = append(clients, client)
 		return c.JSON(http.StatusOK, nil)
 	})
 
