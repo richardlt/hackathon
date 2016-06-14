@@ -1,4 +1,4 @@
-package server
+package master
 
 import (
 	"github.com/labstack/echo"
@@ -6,10 +6,10 @@ import (
 	"github.com/labstack/echo/middleware"
 )
 
-// Start server
-func Start() {
+// Serve server
+func Serve() {
 	e := echo.New()
 	e.Use(middleware.Logger())
 	e.Use(middleware.Recover())
-	e.Run(standard.New(":" + port))
+	e.Run(standard.New(":8080"))
 }
