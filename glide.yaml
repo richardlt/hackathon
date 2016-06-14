@@ -1,0 +1,3 @@
+package: github.com/richardlt/hackaton
+import:
+- package: github.com/labstack/echo
